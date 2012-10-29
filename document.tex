@@ -1,0 +1,123 @@
+\documentclass[12pt,german,bibliography=totoc]{scrreprt}   
+%BCOR8.25mm seht hier bei für den abstand von der linken seite, da diese
+% gebunden wird
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%EINGEBUNDENE PAKETE (immer vor dem document ) 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{bibgerm}			%fuer aufwendigeres literaturverzeichnis mit themes
+%\usepackage{amssymb}			% wichtige Symbole
+\usepackage{graphics}			% Einbinden von Graphiken
+\usepackage[pdftex]{graphicx}
+\usepackage{epstopdf}			%automatischen generieren von pdfs aus eps
+\usepackage{array}
+\usepackage[centertags]{amsmath} 
+\usepackage{amsfonts}			% Schriftart
+\usepackage{a4}				% Seitenformat
+\usepackage{epsfig}				% Zusaetzliche Graphikbefehle 
+\usepackage{floatflt}			% Tabellen
+\usepackage{scrpage2}			% useheadings
+\usepackage[latin1]{inputenc}	% Umlaute in Windows 
+\usepackage{paralist}			% Bessere Enumerate-Umgebungen (Aufzaehlungszeichen
+% koennen gewaehlt werden) \usepackage{tabular}			% Tabellen
+\usepackage{booktabs}
+\usepackage[ngerman]{babel}	
+\usepackage{mparhack}		% bessere Randnotizen
+\usepackage{setspace}		% eigentlich nur fuer den Titel ..
+\usepackage{multirow}		% Row-/Columnspan ..
+\usepackage{longtable}		%fuer mehrseitige tabellen
+\usepackage{makeidx}		%hiermit kann man ein index erstellen, z.b. fuer
+% abkuerngen und sozu
+\usepackage[T1]{fontenc}	%erweiterter buchstabensatz mit umlauten 
+\usepackage{url}			%um URLs darzustellen
+\usepackage{thmbox}			%umgebung fuer theoreme und beispiele
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{calc}
+\usepackage{floatflt}
+\usepackage{float}
+\usepackage[procnames]{listings}
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{palatino}
+% \setlength{\textwidth}{16.5cm}
+% \setlength{\evensidemargin}{-0.5cm}
+% \setlength{\oddsidemargin}{0.5cm}
+% \setlength{\marginparwidth}{18mm}
+% \reversemarginpar
+% \let\oldmarginpar\marginpar 
+% \renewcommand\marginpar[1]{\-\oldmarginpar[\raggedleft\scriptsize #1]%
+% {\raggedright\scriptsize #1}}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%FORMATIERUNG DES LISTINGS 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth-2\fboxsep}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+%SMC-Sprache 
+
+
+%ACCELEO-Sprache
+\DeclareCaptionFormat{figure}{\colorbox{gray}{\parbox{\textwidth-2\fboxsep}{#1#2#3}}}
+\captionsetup[figure]{format=figure,labelfont=white,textfont=white}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%tABELLENFORMATIERUNG
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  neuer  Befehl:  \includegraphicstotab[..]{..}
+%  Verwendung  analog  wie  \includegraphics
+\newlength{\myx}  %  Variable  zum  Speichern  der  Bildbreite
+\newlength{\myy}  %  Variable  zum  Speichern  der  Bildhöhe
+\newcommand\includegraphicsToTab[2][\relax]{%
+%  Abspeichern  der  Bildabmessungen
+\settowidth{\myx}{\includegraphics[{#1}]{#2}}%
+\settoheight{\myy}{\includegraphics[{#1}]{#2}}%
+%  das  eigentliche  Einfügen
+\parbox[c][1.1\myy][l]{\myx}{%
+\includegraphics[{#1}]{#2}}%
+}%  Ende  neuer  Befehl
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%METAINFORMATIONEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[
+	pdftitle={Modeling and Simulation Excercise},
+	pdfauthor={Alexander Rimer},
+	colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    filecolor=black,
+    pagecolor=black,
+    urlcolor=black]{hyperref} %Metainformationen  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%SCHRIFT FUER CAPTIONS AENDERN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setkomafont{caption}{\footnotesize \selectfont}
+\setkomafont{captionlabel}{\footnotesize \bfseries}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%PYTHON HIGHLIGHTING
+
+\include{code_formatter/pythonlisting}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%DOKUMENT BEGINN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}  
+%Title 
+\begin{figure}
+\centering
+{\Huge Model Building and Simulation (MODUS)}\\[0.5cm]
+{\Huge Exercise 1}\\[0.5cm]
+{\Large Alexander Rimer}\\[0.6cm]  
+\today
+\end{figure}
+
+%Die Uebungen    
+\include{ub1/ub1}
+
+
+\end{document}

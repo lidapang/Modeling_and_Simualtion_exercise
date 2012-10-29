@@ -1,0 +1,69 @@
+\section{Philosophy of science} 
+\begin{enumerate}
+	\item
+	\item
+	\item
+	\item
+	\item
+\end{enumerate}
+\section{Climate modeling}
+\begin{enumerate}
+  \item The author briefly introduces the background of global warming and the potential impact to the reader.
+  		He points out that you need virtual models to assess what is happening in the real world better and to 
+  		create any forecasts. Here for he  points to a number of scientific models. (eg climate models, model of the Earth) 
+  		and points to the advantages and disadvantages of  virtual models.
+  \item 
+  \item	Physical laws are based on the virtual models and describe best the modeled system. These laws are represented by mathematical equations that must be solved 
+  		using numerical methods, and this requires a lot of computing power. In addition, a model have a lot of parameters, which in turn complicates the equations.
+  \item Virtual  models may not display the reality correctly, they should serve as a supportive agent in the model and allow the user to simulate the influence of some paramter.
+  
+\end{enumerate}
+
+\section{Monte carlo simulationubtitle}
+The following code calculates the \textbf{mean}  and \textbf{standard deviation} of the dataset. 
+In this case the inputfile contains all the necessary data.
+
+\begin{python}[caption={Python code for median and standard deviation}]
+import math
+
+daten = open('daten.txt')
+#gibt die erste zeile aus
+#print(daten.readline()) 
+
+#classvars
+mean_sum = 0.0 
+stand_sum =0.0
+outputFileName = "result.txt"
+
+#formatiere datenset in liste
+valueList = []
+for zeile in daten:
+    valueList.extend(zeile.split(' '))
+
+#berechne median
+for value in  valueList:
+    val_num = float(value)   
+    mean_sum += val_num
+    
+#median
+median = mean_sum / len(valueList)
+
+#berechne deviation
+for value in  valueList:
+    val_num = float(value)
+    stand_sum += (val_num - median)**2
+    
+#deviation
+standart_deviation = math.sqrt(stand_sum/len(valueList))
+    
+print "mean:               " + str(median)
+print "standard deviation: " + str(standart_deviation)
+
+outputFile = open(outputFileName, 'w')
+outputFile.write("mean:               " + str(median) + "\n" + "standard deviation: " + str(standart_deviation) )
+outputFile.close()
+daten.close()
+\end{python}
+The results are:\\
+\textbf{mean:				}   149.155 \\        
+\textbf {standard deviation:} 	25.537
