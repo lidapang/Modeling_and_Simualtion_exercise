@@ -11,7 +11,7 @@
 \begin{enumerate}
 	\item
 	\item
-	\item
+	\item 
 	\item
 	\item
 \end{enumerate}
@@ -19,15 +19,20 @@
 \begin{enumerate}
   \item The author briefly introduces the background of global warming and the potential impact to the reader.
   		He points out that you need virtual models to assess what is happening in the real world better and to 
-  		create any forecasts. Here for he  points to a number of scientific models. (eg climate models, model of the Earth) 
-  		and points to the advantages and disadvantages of  virtual models.
-  \item 
+  		create any forecasts. Therefore he  points to a number of scientific models. (eg climate models, model of the Earth) 
+  		and points to the advantages and disadvantages of  virtual models. 
+  		
+  \item With a sensitivity test, a modeler can check, in which way parameters  may influence  the result of the virtual model.
+ 		Furthermore, modeler can find out how much the parameter variation takes effect on the result. The modeler can thus distinguish
+ 		important from unimportant parameters and may choose the right ones for the model. 
+ 		
   \item	Physical laws are based on the virtual models and describe best the modeled system. These laws are represented by mathematical equations that must be solved 
-  		using numerical methods, and this requires a lot of computing power. In addition, a model have a lot of parameters, which in turn complicates the equations.
+  		using numerical methods, and this requires a lot of computing power. In addition, a model has a lot of parameters, which in turn complicates the equations.
+  
   \item Virtual  models may not display the reality correctly, they should serve as a supportive 
   		agent in the model and allow the user to simulate the influence of some paramters.
   		With this adapted model you can model for ex. one specific part of a problem domain, so that the number of parameters is kept small. 
-  		In such a model  you can now vary individual parameters and study the "output" of the model, so that a complete virtual model is not absolutely necessary.
+  		In such a model  you can now vary individual parameters and study the output of the model, so that a complete virtual model is not absolutely necessary.
   
 \end{enumerate}
 
@@ -38,9 +43,7 @@ In this case the inputfile contains all the necessary data.
 \begin{python}[caption={Python code for median and standard deviation}]
 import math
 
-daten = open('daten.txt')
-#gibt die erste zeile aus
-#print(daten.readline()) 
+daten = open('daten.txt')  
 
 #classvars
 mean_sum = 0.0 
@@ -77,5 +80,5 @@ outputFile.close()
 daten.close()
 \end{python}
 The results are:\\
-\textbf{mean:				}   149.155 \\        
-\textbf {standard deviation:} 	25.537
+\textbf{mean:				}   149,155 \\        
+\textbf {standard deviation:} 	25,537
