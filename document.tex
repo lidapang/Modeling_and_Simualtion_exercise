@@ -20,7 +20,7 @@
 \usepackage{paralist}			% Bessere Enumerate-Umgebungen (Aufzaehlungszeichen
 % koennen gewaehlt werden) \usepackage{tabular}			% Tabellen
 \usepackage{booktabs}
-\usepackage[ngerman]{babel}	
+\usepackage[ngerman,english]{babel}	
 \usepackage{mparhack}		% bessere Randnotizen
 \usepackage{setspace}		% eigentlich nur fuer den Titel ..
 \usepackage{multirow}		% Row-/Columnspan ..
@@ -50,8 +50,12 @@
 % {\raggedright\scriptsize #1}}
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%COMMANDS 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\thesubsection}{\Alph{subsection}}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %FORMATIERUNG DES LISTINGS 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \DeclareCaptionFont{white}{\color{white}}
 \DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth-2\fboxsep}{#1#2#3}}}
 \captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
@@ -111,7 +115,7 @@
  
 
 %Die Uebungen    
-\include{ub1/ub2}
+\include{ub1/ub3}
 
 
 \end{document}
