@@ -98,6 +98,21 @@ Following sequence diagram describes the second scenario:
   \label{fig:1b_pat_stat} 
  \end{figure}
  
+ 
+ \section{Simulation of the real world problem}
+ \subsection{Summary of results}
+The supply chain model describes in very simple terms a stilised supply chain procedure.
+The key objects are the five distributors (which own one to five trucks each), the retailers and the trucks. 
+The retailers comission from time to time orders for five to 20 products to one of the five distributors.
+Then the trucks are loaded with the products up to their maximum capacity which is 100 products 
+(however, if a truck is loaded up to 90\% it is enough for it to move out). Then the retailers which
+issued the orders are successively served. If an order is issued and no truck is at the distributor,
+the order is placed in a backlog; as soon as a truck arrives back at the distributor, the truck is loaded up with the goods,
+which were required in the order. And the truck takes as much orders as possible out of the backlog.
+\\
+This simple model allows the user to manipulate several parameters (wich are
+also part of the real world) like: number of trucks, max.
+capacity etc. so the user can observe effects of the parameters on the behavior of the modeled system.
 
 
  
