@@ -1,0 +1,78 @@
+%Title 
+\begin{figure}
+\centering
+{\Huge Model Building and Simulation (MODUS)}\\[0.5cm]
+{\Huge Exercise 4}\\[0.5cm]
+{\Large Alexander Rimer / Eleni Milona}\\[0.6cm]  
+{\Large 1138243 / 1150221}\\[0.6cm]  
+\today
+\end{figure}
+
+\section{Modeling the realworld problems}
+\subsection{Simulation method}
+We choose a discrete-event model, because with this kind of model:
+\begin{itemize}
+  	\item you can identify bottlenecks
+	\item	you can vary the parameters to get forecasts of the systembehaviour
+	\item	the agent behaviour is not of interest to the objectives, the process flow is
+\end{itemize}
+
+\subsection{Conceptual model}
+i) 
+	\textbf{Objectives:}
+		\begin{itemize}	
+		  \item VIPs
+		  \item customers
+		\end{itemize}
+ii) 	
+	\textbf{Inputs:}
+		\begin{itemize}	
+		  \item number of customers in queue
+		  \item number of employees at counter
+		  \item service time (at counter)
+		\end{itemize}
+		
+	\textbf{Outputs:}
+		\begin{itemize}	
+		  \item time: (3 and 5 minutes)
+		  \item percentage ( 99 and 95)
+		\end{itemize}
+		
+	\textbf{Content:}
+		\begin{itemize}	
+		  \item 
+		\end{itemize}
+
+iii)
+\textbf{Simplification:}
+	\begin{itemize}
+	  \item Customers standardized (socio - economic-characteristics not of importance)
+	  \item Customer arrival rates, time of day, different products, etc. are abstracted (not important)
+	\end{itemize}
+
+\textbf{Assumptions:}
+	\begin{itemize}
+	  \item Optimal queues: no queue-jumping
+	  \item Employees: attributes  (e.g. tiredness, breaks, working speed etc.) are modeled after averages or some 
+	        statistical distribution
+	\end{itemize}
+
+
+
+
+					
+\subsection{Graphical representation}
+ 
+
+\section{Design of experiments}
+How can a farmer work the best potato sort - fertilizer combination out?\\
+One could use the $2^k $ expermient design where $k=2$: potato sort, fertilizer.
+The farmer has to observe 4 scenarios:
+\begin{itemize}
+ \item potato sort 1 - fertilizer 1
+\item potato sort 2 - fertilizer 1
+\item potato sort 1 - fertilizer 2
+\item potato sort 2 - fertilizer 2
+\end{itemize}
+However, the $2^k$ expermient design may be to complex; it would suffice to just compare the alternatives with
+each other and choose the most succesfull combination.   
