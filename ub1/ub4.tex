@@ -8,7 +8,7 @@
 \today
 \end{figure}
 
-\section{Modeling the realworld problems}
+\section{Modeling the real-world problems}
 \subsection{Simulation method}
 We choose a discrete-event model, because with this kind of model:
 \begin{itemize}
@@ -21,38 +21,46 @@ We choose a discrete-event model, because with this kind of model:
 i) 
 	\textbf{Objectives:}
 		\begin{itemize}	
-		  \item VIPs
-		  \item customers
+		  \item Serve 95\% of ``normal'' customers in less than 5 minutes
+		  \item Serve 99\% of ``VIP'' customers in less than 3 minutes
 		\end{itemize}
 ii) 	
 	\textbf{Inputs:}
 		\begin{itemize}	
-		  \item number of customers in queue
+		  \item number of customers in queue (max. 10 for ``normals'', max. 25 for VIPs)
 		  \item number of employees at counter
 		  \item service time (at counter)
+		  \item arrival rates of customers
 		\end{itemize}
 		
 	\textbf{Outputs:}
 		\begin{itemize}	
-		  \item time: (3 and 5 minutes)
-		  \item percentage ( 99 and 95)
+		  %\item time: (3 and 5 minutes)
+		  %\item percentage ( 99 and 95)
+		  \item \% of customers queuing for less than 5 (or 3) minutes
+		  \item employees utilisation
+		  \item statistical outputs like histograms etc
 		\end{itemize}
 		
 	\textbf{Content:}
 		\begin{itemize}	
-		  \item 
-		\end{itemize}
+		  \item Employees at counter
+		  \item queues of normal / VIP customers
+		  \item different priorities for VIPs and ``normals''
+		  \end{itemize}
 
 iii)
 \textbf{Simplification:}
 	\begin{itemize}
 	  \item Customers standardized (socio - economic-characteristics not of importance)
+	  \item VIP - queue has  max. 10 entities
+	  \item ``normals'' - queue has max. 25 entities
 	  \item Customer arrival rates, time of day, different products, etc. are abstracted (not important)
 	\end{itemize}
 	
 \textbf{Assumptions:}
 	\begin{itemize}
-	  \item Optimal queues: no queue-jumping
+	  \item Optimal queues: no queue-jumping, leaving etc.
 	  \item Employees: attributes  (e.g. tiredness, breaks, working speed etc.) are modeled after averages or some 
 	        statistical distribution
 	\end{itemize}
